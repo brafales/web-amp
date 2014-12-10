@@ -1,8 +1,11 @@
 angular.module('webAmp.audio.nodes')
 .factory('AudioNode', [
-  '$rootScope', 'audioContext',
-  function($scope, audioContext){
+  '$rootScope', 'audioContext', 'ErrorLogger',
+  function($scope, audioContext, errorLogger){
 
+    errorLogger.hello();
+
+    console.log("Registering the audio node service");
     // This is the abstract class for all audio nodes
     var AudioNode = function(){
       this.name = "NO NAME";

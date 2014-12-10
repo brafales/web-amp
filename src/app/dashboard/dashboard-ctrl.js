@@ -1,7 +1,13 @@
 angular.module('webAmp')
 .controller('dashboardCtrl', [
-  '$scope', 'SoundBoardService',
-  function($scope, SoundBoardService){
+  '$scope', 'SoundBoardService', 'ErrorLogger',
+  function($scope, SoundBoardService, errorLogger){
+
+
+    errorLogger.hello();
+    errorLogger.hello();
+    errorLogger.hello();
+    errorLogger.hello();
 
     $scope.audioNodes = SoundBoardService.audioNodes;
 
