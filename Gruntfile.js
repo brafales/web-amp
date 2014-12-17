@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+  grunt.loadNpmTasks("grunt-contrib-connect");
+
   // Initialise config
   grunt.initConfig({
     pkg: require('./package.json')
@@ -22,7 +24,17 @@ module.exports = function(grunt) {
     vendor_files: {
       js: 'src/vendor/**/*.js',
       css: 'vendorFiles/**/*.css'
+    },
+    connect: {
+      server : {
+        options: {
+          open: true,
+          keepalive: true,
+          base: './src'
+        }
+      }
     }
+
   });
 
   grunt.loadTasks('grunt');
