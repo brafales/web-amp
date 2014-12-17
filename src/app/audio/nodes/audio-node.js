@@ -10,6 +10,7 @@ angular.module('webAmp.audio.nodes')
     var AudioNode = function(){
       this.name = "NO NAME";
       this._connectedNode = null;
+      this.selected = false;
     };
 
     AudioNode.prototype.connectedNode = function(newConnectedNode){
@@ -56,6 +57,14 @@ angular.module('webAmp.audio.nodes')
 
     AudioNode.prototype.getAudioNode = function(){
       return this.node;
+    };
+
+    AudioNode.prototype.isSelected = function(){
+      return this.selected;
+    };
+
+    AudioNode.prototype.select = function(){
+      this.selected = true;
     };
 
     return AudioNode;

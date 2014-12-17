@@ -6,7 +6,9 @@ angular.module('webAmp')
     this.audioNodes = [];
 
     this.createGainNode = function() {
-      this.audioNodes.push(new GainAudioNode());
+      var node = new GainAudioNode();
+      this.audioNodes.push(node);
+      return node;
     };
 
     this.createDelayNode = function() {

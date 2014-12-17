@@ -1,7 +1,7 @@
 angular.module('webAmp')
 .controller('dashboardCtrl', [
-  '$scope', 'SoundBoardService', 'ErrorLogger',
-  function($scope, SoundBoardService, errorLogger){
+  '$scope', 'SoundBoardService', 'ErrorLogger', 'UiService',
+  function($scope, SoundBoardService, errorLogger,UiService){
 
 
     errorLogger.hello();
@@ -14,7 +14,8 @@ angular.module('webAmp')
     SoundBoardService;
 
     $scope.createGainNode = function() {
-      SoundBoardService.createGainNode();
+      var node = SoundBoardService.createGainNode();
+      UiService.createUiForNode(node);
     };
 
     $scope.createDelayNode = function() {
